@@ -1,0 +1,8 @@
+// Victor Guerra <vguerra@gmail.com>
+// 20141026
+
+#ifndef SORTINT_SEARCHING_SELECTION_SORT_H_
+#define SORTINT_SEARCHING_SELECTION_SORT_H_ 
+
+
+#endif  // SORTINT_SEARCHING_SELECTION_SORT_H_
