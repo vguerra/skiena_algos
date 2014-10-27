@@ -71,6 +71,8 @@ flags = [
 '.',
 '-I',
 './ClangCompleter',
+'-I',
+'/usr/local/repos/Catch/single_include',
 '-isystem',
 './tests/gmock/gtest',
 '-isystem',
@@ -86,7 +88,7 @@ flags = [
 '-isystem',
 '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
 '-isystem',
-'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
+'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1',
 ]
 
 
