@@ -1,14 +1,23 @@
 // Victor Guerra <vguerra@gmail.com>
-// Implementation of a dynamic array. 
+// Implementation of a dynamic array.
 
+#include <cstddef>
 #include <algorithm>
-#include <array>
 
 class dynamic_array {
-  public: 
-    dynamic_array() = default;
-    ~dynamic_array() = default;
+  public:
+  static const std::size_t npos = -1;
+    
+  dynamic_array() = default;
+  dynamic_array(std::size_t size) : size_(size) , array_(new int[size]) {};
+  ~dynamic_array() = default;
+
+  std::size_t search(int value) const;
+  void insert(int value);
+  void remove(std::size_t pos);
 
   private:
-    std::array<int, 1> array_;
+  std::size_t last_ = 0;
+  std::size_t size_ = 0;
+  int* array_ = nullptr; 
 };
