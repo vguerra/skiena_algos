@@ -16,8 +16,12 @@ class dynamic_array {
   void insert(int value);
   void remove(std::size_t pos);
 
+  std::size_t size() const { return last_ + 1; }
+  std::size_t capacity() const { return size_; }
+
   private:
   std::size_t last_ = 0;
   std::size_t size_ = 0;
   int* array_ = nullptr; 
 };
+

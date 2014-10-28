@@ -9,8 +9,12 @@ std::size_t dynamic_array::search(int value) const {
 }
 
 void dynamic_array::insert(int value) {
-  if (last_ > size_) {
-    // do allocation and copy contents
+  if (last_ == size_) {
+    size_ *= 2;
+    int* tmp_array = new int[size_];
+    std::copy(array_, array_ + last_, tmp_array);
+    delete[] array_;
+    array_ = tmp_array;
   }
   array_[last_++] = value;
 }
