@@ -20,7 +20,7 @@ darray_test: darray dynamic_array_test.cc
 
 
 clean:
-	rm -rf *dSYM darray
+	rm -rf *dSYM darray darray_test
 
 tags:
 	$(CTAGS) *
