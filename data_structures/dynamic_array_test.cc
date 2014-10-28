@@ -3,9 +3,6 @@
 #include <catch.hpp>
 #include "dynamic_array.h"
 
-
 TEST_CASE("Constructors of dynamic_array", "[dynamic_array]") {
-  SECTION("Default constructors") {
-    dynamic_array da;
-  }
+  SECTION("Default constructors") { dynamic_array da; }
 }
