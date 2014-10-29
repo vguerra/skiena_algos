@@ -24,5 +24,10 @@ TEST_CASE("Testing of dynamic_array", "[dynamic_array]") {
     da.insert(3);
     CHECK(da.capacity() == 4);
     CHECK(da.size() == 4);
+
+    da.remove(1);
+    CHECK(da.capacity() == 4);
+    CHECK(da.size() == 3);
+  
   }
 }
