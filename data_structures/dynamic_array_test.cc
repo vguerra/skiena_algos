@@ -3,14 +3,26 @@
 #include <catch.hpp>
 #include "dynamic_array.h"
 
-TEST_CASE("Constructors of dynamic_array", "[dynamic_array]") {
-  SECTION("Default constructors") { 
-    {
-      dynamic_array da(2);
-  
-      WARN("The capacity is: " << da.capacity());
-      WARN("The size is: " << da.size());
-  
-    }
+TEST_CASE("Testing of dynamic_array", "[dynamic_array]") {
+  SECTION("Default constructors") {
+    dynamic_array da(2);
+    CHECK(da.capacity() == 2);
+    CHECK(da.size() == 0);
+  }
+
+  SECTION("Dynamic growing of dynamic_array", "[dynamic_array]") {
+    dynamic_array da(2);
+    da.insert(0);
+    da.insert(1);
+    CHECK(da.size() == 2);
+    CHECK(da.capacity() == 2);
+
+    da.insert(2);
+    CHECK(da.capacity() == 4);
+    CHECK(da.size() == 3);
+
+    da.insert(3);
+    CHECK(da.capacity() == 4);
+    CHECK(da.size() == 4);
   }
 }
