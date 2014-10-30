@@ -3,6 +3,7 @@
 
 #include <cstddef>
 #include <algorithm>
+#include <memory>
 
 class dynamic_array {
   public:
@@ -11,9 +12,19 @@ class dynamic_array {
   static const std::size_t npos = -1;
 
   dynamic_array() = default;
-  dynamic_array(std::size_t size) : size_(size), array_(new int[size]){};
-  ~dynamic_array() = default;
+  dynamic_array(std::size_t size) : size_(size), array_(new int[size]) {};
+  ~dynamic_array() = default; 
 
+  dynamic_array(const dynamic_array& rhs) : last_(rhs.last_), size_(rhs.size_), array_(new int[rhs.size_]){
+    std::copy(rhs.array_.get() , rhs.array_.get() + rhs.last_, array_.get());
+  }
+  
+  dynamic_array(dynamic_array&& rhs) {
+  }
+
+  dynamic_array& operator=(const dynamic_array& rhs) {}
+  dynamic_array& operator=(dynamic_array&& rhs) noexcept {}
+  
   std::size_t search(int value) const;
   void insert(int value);
   void remove(std::size_t pos);
@@ -27,5 +38,5 @@ class dynamic_array {
   private:
   std::size_t last_ = 0;
   std::size_t size_ = 0;
-  int* array_ = nullptr;
+  std::unique_ptr<int[]> array_;
 };
