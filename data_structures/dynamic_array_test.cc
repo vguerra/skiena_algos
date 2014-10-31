@@ -51,7 +51,9 @@ TEST_CASE("Testing of dynamic_array", "[dynamic_array]") {
 
   SECTION("Searching elements on dynamic_array", "[dynamic_array]") {
     dynamic_array da(10);
-    std::iota(&da[0], &da[9], 0);
+    for (auto i : {0, 1, 2, 3, 4, 5, 6, 7, 8}) {
+      da.insert(i);
+    }
     CHECK(da.search(0) == 0);
     CHECK(da.search(5) == 5);
     CHECK(da.search(100) == dynamic_array::npos);
