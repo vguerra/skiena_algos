@@ -13,7 +13,7 @@ class dynamic_array {
 
   dynamic_array() = default;
   dynamic_array(std::size_t size) : size_(size), array_(new int[size]) {};
-  ~dynamic_array() = default; 
+  ~dynamic_array() = default;
 
   dynamic_array(const dynamic_array& rhs) : last_(rhs.last_), size_(rhs.size_), array_(new int[rhs.size_]){
     std::copy(rhs.array_.get() , rhs.array_.get() + rhs.last_, array_.get());

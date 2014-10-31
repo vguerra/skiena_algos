@@ -22,6 +22,5 @@ void dynamic_array::insert(int value) {
 }
 
 void dynamic_array::remove(std::size_t pos) {
-  std::swap(array_[pos], array_[last_]);
-  --last_;
+  std::swap(array_[pos], array_[--last_]);
 }
